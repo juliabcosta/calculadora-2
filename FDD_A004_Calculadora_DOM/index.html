@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Nexo Calc — calculadora web">
+  <title>Nexo Calc</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <div class="brand">NEXO<span>CALC</span></div>
+    <p class="eyebrow">Utilitário web</p>
+    <h1>Calculadora</h1>
+    <p>A interface está pronta. Falta implementar a lógica JavaScript para ler os botões, atualizar o visor e realizar as operações.</p>
+
+    <div class="info-card">
+      <strong>Objetivo da atividade</strong>
+      <span>Conectar eventos de clique ao DOM e controlar o visor usando JavaScript.</span>
+    </div>
+  </section>
+
+  <section class="calculator" aria-label="Calculadora">
+    <header class="calculator-header">
+      <div>
+        <span class="calculator-label">Nexo Calc</span>
+        <strong>Operações básicas</strong>
+      </div>
+      <span id="status" class="status">Pronta</span>
+    </header>
+
+    <div class="display" aria-live="polite">
+      <div id="operacao-anterior" class="previous-operation">&nbsp;</div>
+      <div id="visor" class="main-display">0</div>
+    </div>
+
+    <div class="keypad">
+      <button id="btn-limpar" class="key key--clear" type="button">C</button>
+      <button class="key operador" type="button">÷</button>
+      <button class="key operador" type="button">×</button>
+      <button class="key operador" type="button">−</button>
+
+      <button class="key numero" type="button">7</button>
+      <button class="key numero" type="button">8</button>
+      <button class="key numero" type="button">9</button>
+      <button class="key operador key--operator-main" type="button">+</button>
+
+      <button class="key numero" type="button">4</button>
+      <button class="key numero" type="button">5</button>
+      <button class="key numero" type="button">6</button>
+      <button id="btn-igual" class="key key--equals" type="button">=</button>
+
+      <button class="key numero" type="button">1</button>
+      <button class="key numero" type="button">2</button>
+      <button class="key numero" type="button">3</button>
+
+      <button class="key numero key--zero" type="button">0</button>
+    </div>
+
+    <footer class="calculator-footer">
+      <span>HTML e CSS prontos</span>
+      <span>Implemente somente <strong>script.js</strong></span>
+    </footer>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

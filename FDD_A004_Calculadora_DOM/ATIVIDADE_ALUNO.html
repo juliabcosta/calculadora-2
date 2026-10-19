@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DOM 04 — Calculadora | Atividade do Aluno</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+:root{--red:#E30613;--dark:#333;--mid:#666;--line:#E5E5E5;--soft:#F5F5F5}
+*{box-sizing:border-box}
+body{margin:0;background:#EFEFEF;color:var(--dark);font-family:Montserrat,Arial,sans-serif;line-height:1.55}
+.page{width:min(1000px,94vw);margin:28px auto 60px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.top{padding:22px 34px;background:var(--red);color:#fff;font-size:clamp(27px,4vw,47px);font-weight:800}
+.cover{display:grid;grid-template-columns:1.08fr .92fr;min-height:430px}
+.copy{padding:46px}.brand{font-size:25px;font-weight:800;color:#111}.course{font-size:17px}.line{width:70%;height:4px;background:var(--red);margin:25px 0 38px}.uc{font-size:15px;text-transform:uppercase}
+h1{margin:10px 0 15px;color:#111;font-size:clamp(38px,5vw,64px);line-height:1.03;letter-spacing:-.04em}.subtitle{font-size:16px}
+.visual{display:grid;place-items:center;background:linear-gradient(135deg,#F1F1F1,#DDDDDD)}
+.calc{width:255px;padding:15px;border-radius:22px;background:#171717;box-shadow:0 22px 55px rgba(0,0,0,.2)}
+.display{height:72px;border-radius:13px;background:#282828;color:#fff;display:flex;align-items:end;justify-content:flex-end;padding:13px;font-size:28px}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:8px}.keys span{display:grid;place-items:center;height:44px;border-radius:9px;background:#333;color:#fff;font-weight:700}.keys .op{background:#444}.keys .equal{background:var(--red)}
+.axes{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.axis{padding:22px;text-align:center}.axis+.axis{border-left:1px solid var(--line)}.axis strong{display:block;color:#111;font-size:13px;text-transform:uppercase}.axis span{display:block;margin-top:3px;color:#666;font-size:11px}
+.content{padding:40px 46px 50px}.kicker{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#777}h2{margin:6px 0 10px;color:#111}.card{margin-top:18px;padding:20px;border:1px solid var(--line);border-radius:12px}.card.highlight{border-left:5px solid var(--red)}ul,ol{padding-left:22px}li{margin:8px 0}code{padding:2px 5px;background:#F1F1F1;border-radius:5px}.note{padding:13px;border-radius:9px;background:var(--soft)}
+@media(max-width:720px){.cover{grid-template-columns:1fr}.visual{min-height:300px}.copy,.content{padding:30px 24px}.axes{grid-template-columns:1fr}.axis+.axis{border-left:0;border-top:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="top">ATIVIDADE DO ALUNO</div>
+
+  <section class="cover">
+    <div class="copy">
+      <div class="brand">SENAI-SP</div>
+      <div class="course">Técnico em Multimídia</div>
+      <div class="line"></div>
+      <div class="uc">Fundamentos de Design Digital (FDD)</div>
+      <h1>DOM 04 — Calculadora</h1>
+      <p class="subtitle">Os botões já estão na tela. Faça o JavaScript ler números e operações, atualizar o visor, calcular e limpar.</p>
+    </div>
+
+    <div class="visual">
+      <div class="calc" aria-hidden="true">
+        <div class="display">123</div>
+        <div class="keys">
+          <span>C</span><span class="op">÷</span><span class="op">×</span><span class="op">−</span>
+          <span>7</span><span>8</span><span>9</span><span class="op">+</span>
+          <span>4</span><span>5</span><span>6</span><span class="equal">=</span>
+          <span>1</span><span>2</span><span>3</span><span>0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="axes">
+    <div class="axis"><strong>Números</strong><span>Leia o botão clicado</span></div>
+    <div class="axis"><strong>Operação</strong><span>Guarde a escolha do usuário</span></div>
+    <div class="axis"><strong>Visor</strong><span>Atualize o DOM</span></div>
+  </div>
+
+  <section class="content">
+    <div class="kicker">Contexto</div>
+    <h2>A interface está pronta. Falta implementar o comportamento.</h2>
+    <p>Você trabalhará como desenvolvedor responsável pela lógica de uma calculadora simples. O HTML e o CSS já foram concluídos.</p>
+
+    <div class="card highlight">
+      <div class="kicker">Desafio</div>
+      <p>Implemente somente <code>script.js</code> para permitir que o usuário digite números pelos botões, escolha uma operação, veja o visor mudar a cada clique, calcule com <code>=</code> e reinicie com <code>C</code>.</p>
+    </div>
+
+    <div class="card">
+      <div class="kicker">Você vai usar</div>
+      <ul>
+        <li><code>querySelector()</code> e <code>querySelectorAll()</code>;</li>
+        <li><code>addEventListener('click', ...)</code>;</li>
+        <li><code>textContent</code> para ler os botões;</li>
+        <li><code>textContent</code> para atualizar o visor;</li>
+        <li>variáveis para guardar primeiro número e operação;</li>
+        <li>condicionais para decidir qual cálculo executar;</li>
+        <li><code>classList</code> para o feedback visual.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="kicker">Sequência sugerida</div>
+      <ol>
+        <li>Faça os números aparecerem no visor.</li>
+        <li>Faça o visor juntar os dígitos: 1 → 12 → 123.</li>
+        <li>Implemente a escolha da operação.</li>
+        <li>Faça o segundo número iniciar uma nova digitação.</li>
+        <li>Implemente o botão <code>=</code>.</li>
+        <li>Implemente o botão <code>C</code>.</li>
+        <li>Trate divisão por zero.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="kicker">Entregável</div>
+      <p>Pasta da atividade com o arquivo <code>script.js</code> implementado.</p>
+      <div class="note"><strong>Importante:</strong> trabalhe somente com números inteiros e uma operação por vez. Isso é suficiente para concluir a atividade.</div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
